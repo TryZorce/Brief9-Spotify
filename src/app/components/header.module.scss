@@ -1,3 +1,17 @@
-.red {
-    color: red;
+.header {
+    width: 100vw;
+    height: 10vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #1ED760;
+}
+
+
+.header_button {
+    display: flex;
+    background-color: grey;
+    margin: 20px;
+    padding: 5px;
+    border-radius: 20px;
 }
