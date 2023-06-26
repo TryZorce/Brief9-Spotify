@@ -1,15 +1,33 @@
-import React from 'react';
-import styles from './list.module.scss';
-import data from "./data.json";
+import React, { useEffect, useState } from 'react';
+import List from './List';
+import fetchSpotifyApi from '../../api/api';
 
-const List = () => {
-    return (
+const ListPage = () => {
+  const [topMusics, setTopMusics] = useState([]);
 
-        <div>
-            <p></p>
-            
-        </div>
+  useEffect(() => {
+    const fetchTopMusics = async () => {
+      const response = await fetchSpotifyApi('https://api.spotify.com/v1/browse/featured-playlists');
+      if (response) {
+        setTopMusics(response);
+      }
+    };
 
-    );
+    fetchTopMusics();
+  }, []);
+
+  return (
+    <div>
+      {topMusics.map((music, index) => (
+        <List
+          key={index}
+          title={music.title}
+          artist={music.artist}
+          album={music.album}
+        />
+      ))}
+    </div>
+  );
 };
-export default List;
+
+export default ListPage;

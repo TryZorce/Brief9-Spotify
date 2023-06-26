@@ -4,14 +4,42 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    background-color: #1ED760;
-}
+    background-color: #000000;
+    color: #1ed760;
 
+    h1 {
+        margin: 0;
+    }
+
+    a {
+        text-decoration: none;
+        color: #1ed760;
+    }
+}
 
 .header_button {
     display: flex;
-    background-color: grey;
-    margin: 20px;
+    margin: 0 20px;
     padding: 5px;
-    border-radius: 20px;
+
+    a {
+        text-decoration: none;
+        color: #1ed760;
+        margin: 0 10px;
+    }
+}
+
+.search_bar {
+    display: flex;
+    align-items: center;
+    margin: 10px;
+
+    input[type='text'] {
+        padding: 5px;
+        margin-right: 10px;
+    }
+
+    .search_button {
+        padding: 5px;
+    }
 }
