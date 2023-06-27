@@ -1,25 +1,15 @@
 import React from "react";
-import Header from "../../components/Header.jsx";
-import List from "../../components/List.jsx";
-import data from "../../components/data.json";
+import Header from "../../components/Header";
+import List from "../../components/List";
+import fetchSpotifyApi from "../../../api/api";
 
-function ListUser() {
-  const filteredPeople = Object.values(data.people).filter(objet => objet.post === "technician");
-
+const ListPage = async () => {
+  const response = await fetchSpotifyApi('browse/featured-playlists?limit=10');
   return (
     <>
       <Header />
-      {filteredPeople.map(objet => (
-        <List
-          name={objet.name}
-          age={objet.age}
-          address={objet.address.street + " " + objet.address.city + " " + objet.address.country}
-          post={objet.post}
-        />
-      ))}
     </>
   );
-}
+};
 
-export default ListUser;
-
+export default ListPage;

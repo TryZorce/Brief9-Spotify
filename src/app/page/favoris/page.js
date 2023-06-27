@@ -1,24 +1,24 @@
-'use client'
 import React from "react";
-import Header from "./components/Header";
-import List from "./components/List.jsx";
-import data from "./components/data.json";
-import style from "./page.module.scss";
+import Header from "../../components/Header";
+import List from "../../components/List";
+import fetchSpotifyApi from "../../../api/api";
 
-function ListUser() {
-  const filteredPeople = Object.values(data.people).filter(objet => objet.post === "technician");
-
+const ListPage = async () => {
+  const response = await fetchSpotifyApi('browse/featured-playlists?limit=10');
   return (
     <>
       <Header />
-      <h1 className={style.title}>Accueil</h1>
-      {filteredPeople.map(objet => (
-        <List
-        />
-      ))}
+        {/* {response?.playlists.items.map((music, index) => (
+          <List
+            key={index}
+            title={music.name}
+            artist={music.owner.display_name}
+            image={music.images[0].url}
+            album="Album test"
+          />
+        ))} */}
     </>
   );
-}
+};
 
-export default ListUser;
-
+export default ListPage;

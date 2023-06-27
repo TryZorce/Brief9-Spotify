@@ -6,40 +6,55 @@
     justify-content: center;
     background-color: #000000;
     color: #1ed760;
-
+  
     h1 {
-        margin: 0;
+      margin: 0;
     }
-
+  
     a {
-        text-decoration: none;
-        color: #1ed760;
+      text-decoration: none;
+      color: #1ed760;
     }
-}
-
-.header_button {
+  
+    @media (max-width: 768px) {
+      /* Styles pour les écrans de taille maximale de 768px */
+      flex-direction: column;
+      height: auto;
+  
+      .header_button {
+        margin: 10px;
+      }
+  
+      .search_bar {
+        margin-bottom: 10px;
+      }
+    }
+  }
+  
+  .header_button {
     display: flex;
     margin: 0 20px;
     padding: 5px;
-
+  
     a {
-        text-decoration: none;
-        color: #1ed760;
-        margin: 0 10px;
+      text-decoration: none;
+      color: #1ed760;
+      margin: 0 10px;
     }
-}
-
-.search_bar {
+  }
+  
+  .search_bar {
     display: flex;
     align-items: center;
     margin: 10px;
-
-    input[type='text'] {
-        padding: 5px;
-        margin-right: 10px;
+  
+    input[type="text"] {
+      padding: 5px;
+      margin-right: 10px;
     }
-
+  
     .search_button {
-        padding: 5px;
+      padding: 5px;
     }
-}
+  }
+  

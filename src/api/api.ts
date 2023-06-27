@@ -36,7 +36,7 @@ const getSpotifyAuthToken = async () => {
             const response = await axios.post(
                 options.url,
                 options.data,
-                {headers: options.headers});
+                { headers: options.headers });
 
             if (response.status === 200) {
                 return response.data.access_token;

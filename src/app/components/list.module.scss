@@ -1,45 +1,34 @@
-.body_bg {
+.wrapper_card {
     display: flex;
+    flex-direction: column;
     flex-wrap: wrap;
-}
+    padding: 10px;
+    border: 1px solid #000000;
+    margin: 10px;
+  }
 
-.wrapper_list {
-    border: 1px solid black;
-    text-align: center;
-    border-radius: 3px;
-    margin: 20px;
-    background-color: white;
-    width: 300px;
+  .wrapper_text {
+    background-color: #127E38;
+  }
+
+  .title {
+    font-size: 18px;
+    font-weight: bold;
+  }
+  
+  .artist {
+    font-size: 14px;
+    color: rgb(255, 255, 255);
+  }
+  
+  .album {
+    font-size: 14px;
+    color: rgb(255, 255, 255);
+  }
+  
+  .image {
+    width: 200px;
     height: 200px;
-    color: black;
-
-
-    .ListUser_Name {
-        font-size: x-large;
-        margin-left: auto;
-        margin-right: auto;
-        margin: 15px;
-    }
-
-    .ListUser_Age {
-        font-size: large;
-
-        margin-left: auto;
-        margin-right: auto;
-        margin: 15px;
-    }
-
-    .ListUser_Address {
-        font-size: large;
-        margin-left: auto;
-        margin-right: auto;
-        margin: 15px;
-    }
-
-    .ListUser_Post {
-        font-size: x-large;
-        margin-left: auto;
-        margin-right: auto;
-        margin: 15px;
-    }
-}
+    object-fit: cover;
+  }
+  
