@@ -1,8 +1,11 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
+
 
 const App = () => {
     const [searchTerm, setSearchTerm] = useState("");
     const [artists, setArtists] = useState([]);
+    const inputref = useRef();
+
 
     useEffect(() => {
         const fetchArtists = async () => {
@@ -21,15 +24,17 @@ const App = () => {
     }, [searchTerm]);
 
     const handleSearch = () => {
-        window.location.href = `/page/recherche?${searchTerm}`;
+        if (inputref.current.value) {
+            window.location.href = `/page/recherche?terms=${inputref.current.value}`;
+        }
+        else alert("Rien trouvée")
     };
 
     return (
         <div>
             <input
                 type="text"
-                value={searchTerm}
-                onChange={(e) => setSearchTerm(e.target.value)}
+                ref={inputref}
                 placeholder="Search artists"
             />
             <button onClick={handleSearch}>Search</button>

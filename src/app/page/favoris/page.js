@@ -8,15 +8,7 @@ const ListPage = async () => {
   return (
     <>
       <Header />
-        {/* {response?.playlists.items.map((music, index) => (
-          <List
-            key={index}
-            title={music.name}
-            artist={music.owner.display_name}
-            image={music.images[0].url}
-            album="Album test"
-          />
-        ))} */}
+        <p>Pas commencé</p>
     </>
   );
 };

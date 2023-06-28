@@ -13,6 +13,7 @@ const ListPage = async () => {
         {response?.playlists.items.map((music, index) => (
           <List
             key={index}
+            id={music.id}
             title={music.name}
             artist={music.owner.display_name}
             image={music.images[0].url}
