@@ -1,16 +1,15 @@
 import React from "react";
-import Header from "./components/Header";
-import List from "./components/List.jsx";
+import Header from "../../components/Header";
+import List from "../../components/List.jsx";
 import style from "./page.module.scss";
-import fetchSpotifyApi from "../api/api";
+import fetchSpotifyApi from "../../../api/api";
 
 const ListPage = async () => {
-  const response = await fetchSpotifyApi('browse/featured-playlists?limit=5');
+  const response = await fetchSpotifyApi('browse/featured-playlists?limit=20');
   return (
     <>
       <Header />
       <h1 className={style.title}>Playlist</h1>
-      <a className={style.lien}href="/page/playlist/">Voir plus</a>
       <div className={style.wrapper}>
         {response?.playlists.items.map((music, index) => (
           <List
