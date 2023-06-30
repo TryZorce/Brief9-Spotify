@@ -9,6 +9,8 @@ const Header = () => {
         <nav className={styles.header}>
             <h1> <a href="/">Yfitops</a></h1>
             <div className={styles.header_button}><a href="/page/favoris">Favoris</a></div>
+            <div className={styles.header_button}><a href="/page/album">Album</a></div>
+            <div className={styles.header_button}><a href="/page/playlist">Playlist</a></div>
             <div className={styles.search_bar}>
                 <Search/>
             </div>

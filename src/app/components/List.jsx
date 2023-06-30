@@ -2,6 +2,7 @@
 import React from "react";
 import styles from "./list.module.scss";
 
+
 const List = ({ id, title, artist, album, image }) => {
   return (
     <div className={styles.wrapper_card}>

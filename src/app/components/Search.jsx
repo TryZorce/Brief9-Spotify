@@ -29,7 +29,7 @@ const App = () => {
             window.location.href = `/page/recherche?terms=${inputref.current.value}`;
         } else {
             console.log("Empty search term!");
-            alert("Rien trouvé");
+            alert("Veuillez rentrer une recherche");
         }
     };
 

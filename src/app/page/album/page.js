@@ -5,20 +5,21 @@ import style from "./page.module.scss";
 import fetchSpotifyApi from "../../../api/api";
 
 const ListPage = async () => {
-  const response = await fetchSpotifyApi('browse/featured-playlists?limit=20');
+  const response = await fetchSpotifyApi('browse/new-releases');
+  console.log(response);
   return (
     <>
       <Header />
-      <h1 className={style.title}>Playlist</h1>
+      <h1 className={style.title}>Album Récent</h1>
       <div className={style.wrapper}>
-        {response?.playlists.items.map((music, index) => (
+        {response?.albums.items.map((album, index) => (
           <List
-          key={index}
-          id={music.id}
-          title={music.name}
-          artist={music.tracks.total + " " + "Titres"}
-          image={music.images[0].url}
-        />
+            key={index}
+            id={album.id}
+            title={album.name}
+            artist={album.artists[0].name}
+            image={album.images[0].url}
+          />
         ))}
       </div>
     </>

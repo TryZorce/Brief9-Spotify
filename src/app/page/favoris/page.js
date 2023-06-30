@@ -8,7 +8,7 @@ const ListPage = async () => {
   return (
     <>
       <Header />
-        <p>Pas commencé</p>
+        <h1>Mes favoris</h1>
     </>
   );
 };
